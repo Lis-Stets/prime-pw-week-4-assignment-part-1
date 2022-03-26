@@ -85,7 +85,7 @@ console.log( 'Test - last item of our array:', getLast( emptyArray ) );
 //    DO NOT use Array.includes, Array.indexOf, or Array.find 
 function find( value, array ){
   console.log( 'in find' );
-  for(i=0; i<array.length; i++){
+  for( let i=0; i<array.length; i++ ){
     if( array[i] === value ){
       console.log( 'Found!' );
       return true;
@@ -102,23 +102,62 @@ console.log( 'Test - Find F in abcs array. Should be false', find( 'F', abcs ) )
 // 8. Function to check if a letter is the first letter in a 
 //    string. Return true if it is, and false otherwise
 function isFirstLetter(letter, string) {
-
+  console.log( 'In isFirstLetter', letter, string );
+  let firstLet = string[0];
+  if( letter === firstLet){
+    console.log( true );
+    return true;
+  }
+  else{
+    console.log( false );
+    return false;
+  }
 }
 console.log( 'isFirstLetter - should say true', isFirstLetter('a', 'apple') );
 console.log( 'isFirstLetter - should say false', isFirstLetter('z', 'apple') );
 
 // 9. Function to return the sum of all numbers in an array
-function sumAll( ) {
-  let sum = 0
+function sumAll( array ) {
+  console.log( 'In sumAll' );
+  let sum = 0;
   // TODO: loop to add items
+  for( let i=0; i<array.length; i++ ){
+    sum = sum + array[i];
+  }
   return sum;
 }
+let sumTest = [ 1, 2, 3 ];
+let numsToSum = [ 1, 1, 2, 3, 5, 8, 13, 21, 34 ];
+console.log( 'Test - sumAll 1 + 2 + 3 =', sumAll( sumTest ) );
+console.log( 'Test - sumAll 1, 1, 2, 3, 5, 8, 13, 21, 34 =', sumAll( numsToSum ) );
 
 // 10. Function to return a new array of all positive (greater than zero)
 //     numbers contained in an input array. If there are no positive numbers
 //     return an empty array. Note: The input array should not change.
 
+let positiveArray = [];
 
+function positiveArrayMaker( array ){
+  console.log( 'in positiveArrayMaker');
+  positiveArray = [];
+  for( let i=0; i<array.length; i++ ){
+    if( array[i]>0 ){
+      positiveArray.push( array[i] );
+       'Positive integer found.'
+    }
+  }
+  return positiveArray;
+}
+
+let testArray = [ -10, 0, 2, 4 ];
+let negArray = [ -1, -12, 0, 0 ];
+console.log( 'Test - positiveArrayMaker: should have 2 and 4 ', positiveArrayMaker( testArray ) );
+console.log( 'testArray', testArray );
+console.log( 'positiveArray', positiveArray );
+
+console.log( 'Test - positiveArrayMaker: should be empty', positiveArrayMaker( negArray ) );
+console.log( 'testArray', negArray );
+console.log( 'positiveArray: should be empty', positiveArray );
 
 // 11. Pick a problem from Edabit(https://edabit.com/) or 
 //     CodeWars(https://www.codewars.com/). Then describe it 
