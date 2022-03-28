@@ -151,6 +151,7 @@ function positiveArrayMaker( array ){
 
 let testArray = [ -10, 0, 2, 4 ];
 let negArray = [ -1, -12, 0, 0 ];
+
 console.log( 'Test - positiveArrayMaker: should have 2 and 4 ', positiveArrayMaker( testArray ) );
 console.log( 'testArray', testArray );
 console.log( 'positiveArray', positiveArray );
